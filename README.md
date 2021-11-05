@@ -1,5 +1,5 @@
-Reacl Time Chat Application Using Socket.IO 
+Real Time Chat Application Using Socket.IO 
 
 
 
-DOC : https://socket.io/
+Doc : https://socket.io/
