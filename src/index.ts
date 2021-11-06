@@ -12,10 +12,10 @@ const io = new Server(httpServer, {
     /**
      * Since Socket.IO v3, you need to explicitly enable Cross-Origin Resource Sharing
      * */
-    cors: {
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST'],
-    },
+    // cors: {
+    //     origin: 'http://localhost:3000',
+    //     methods: ['GET', 'POST'],
+    // },
 });
 const router = express.Router();
 
