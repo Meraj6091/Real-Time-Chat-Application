@@ -54,4 +54,6 @@ io.on('connection', (socket: Socket) => {
 });
 app.use(router);
 app.use(cors());
+
+// app.use(cors());
 httpServer.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
