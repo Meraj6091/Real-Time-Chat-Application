@@ -2,6 +2,8 @@ import express, { Request, Response, NextFunction } from 'express';
 import { Server, Socket } from 'socket.io';
 import { createServer } from 'http';
 import { addUser, getUser, removeUser, getUsersInRoom } from './helpers';
+import cors from 'cors';
+
 const PORT = process.env.PORT || 5000;
 const app = express();
 const httpServer = createServer(app);
@@ -10,10 +12,10 @@ const io = new Server(httpServer, {
     /**
      * Since Socket.IO v3, you need to explicitly enable Cross-Origin Resource Sharing
      * */
-    cors: {
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST'],
-    },
+    // cors: {
+    //     origin: 'http://localhost:3000',
+    //     methods: ['GET', 'POST'],
+    // },
 });
 const router = express.Router();
 
@@ -51,4 +53,7 @@ io.on('connection', (socket: Socket) => {
     });
 });
 app.use(router);
+app.use(cors());
+
+// app.use(cors());
 httpServer.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
